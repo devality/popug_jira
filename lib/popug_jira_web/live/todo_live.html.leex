@@ -3,9 +3,30 @@
 </section>
 
 <section class="row">
+  <form phx-submit="create">
+    <input type="text" name="name" placeholder="Task's name" autocomplete="off"/>
+    <button type="submit" phx-disable-with="Creating...">Create</button>
+  </form>
+</section>
+
+
+<section class="row">
   <article class="column">
     <h2>Todo list</h2>
     <ul>
+      <%= for task <- @tasks do %>
+        <li>
+            <%= if task.state == "open" do %>
+              <button type="button" phx-click="close" phx-value-id="<%= task.id %>">Close</button>
+            <% else %>
+              <button type="button" phx-click="open" phx-value-id="<%= task.id %>">Open</button>
+            <% end %>
+            <button type="button" class="button-clear" phx-click="delete" phx-value-id="<%= task.id %>">Delete</button>
+            &nbsp;
+            &nbsp;
+            name: <u><%= task.name %></u>, state: <b><%= task.state %></b>
+        </li>
+      <% end %>
     </ul>
   </article>
 </section>
