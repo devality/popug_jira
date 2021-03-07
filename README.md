@@ -1,5 +1,7 @@
 # PopugJira
 
+[PopugJira Domains](https://docs.google.com/spreadsheets/d/1owsSah3lw_ceOOPOta2r58cNqiqkaAKPPQlBYzwvzHo/edit?usp=sharing)
+
 To start your Phoenix server:
 
   * Install dependencies with `mix deps.get`
